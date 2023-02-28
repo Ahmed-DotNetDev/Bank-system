@@ -12,11 +12,13 @@ namespace Bank_System.Models
 	{
 		private new readonly string email=@"ahmed@gmail.com";
 		private new readonly string password="ahmed@";
+		public static int counter=0;
 		public int ID { get => id; set => id = value; }
 		public string NAME { get=>name;  set => name=value; }
 		public string EMAIL { get => email;}
 		public string PASSWORD { get => password;}
 		public int AGE { get => age; set => age = value; }
+
 
 		/// <summary>
 		/// This method is used to register user name:(string) and age:(int) 

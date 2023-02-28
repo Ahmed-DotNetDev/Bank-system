@@ -19,7 +19,7 @@ namespace Bank_System
 
 		public void ViewNumberOfCustomer()
 		{
-			Console.WriteLine($"The number of customer signed ('{Customer.counter}')");
+			Console.WriteLine($"The number of customer sign in ('{Customer.counter}')");
 		}
 
 	}
