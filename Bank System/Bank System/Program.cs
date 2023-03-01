@@ -82,7 +82,7 @@ namespace Bank_System
 						{
 							employee.ViewNumberOfCustomer();
 						}
-						else if (choice == "Q" ||choice=="q")
+						else if (choice == "Q" || choice == "q")
 						{
 							break;
 						}
@@ -91,6 +91,94 @@ namespace Bank_System
 							Console.WriteLine("Invalid Input");
 						}
 					}
+				}
+
+				else if (choice == "2")
+				{
+					Customer customer = new Customer();
+					while (true)
+					{
+						Console.WriteLine("Click (1) register Click ( q ,Q ) exit ");
+						choice = Console.ReadLine();
+						if (choice == "1")
+						{
+							customer.register();
+						}
+						else if (choice == "q" || choice == "Q")
+						{
+							break;
+						}
+						else
+						{
+							Console.WriteLine("Invalid input");
+						}
+					}
+
+					Console.WriteLine("Logging in system your data: ?");
+					while (true)
+					{
+						Console.WriteLine("Enter your email please : ?");
+						string logemail = Console.ReadLine();
+						Console.WriteLine("Enter your password please :?");
+						string logpass = Console.ReadLine();
+						Console.WriteLine("do you want to exite enter( Q , q ): ?");
+						choice = Console.ReadLine();
+						if (logemail == customer.EMAIL && logpass == customer.PASSWORD)
+						{
+							Console.WriteLine("Hi, " + customer.NAME);
+							break;
+						}
+						else if (choice == "Q" || choice == "q")
+						{
+							break;
+						}
+						else
+						{
+							Console.WriteLine("Invalid password or email");
+						}
+					}
+
+					Random random = new Random();
+					customer.ID = random.Next(100000000, 999999999);
+					Console.WriteLine("****************************\nname : " + customer.NAME +
+						"\n****************************\nage : " + customer.AGE + "\n****************************\nemail : " + customer.EMAIL +
+						"\n****************************\npassword : " + customer.PASSWORD + "\n****************************\nbalance : " + customer.BANALACE);
+
+
+					while (true)
+					{
+						Console.WriteLine("Click (1) deposit ------ Click (2) withdraw ------ Click (3) show data ------ Click (4) exit");
+						choice = Console.ReadLine();
+						if (choice == "1")
+						{
+							customer.deposit();
+							Console.WriteLine("Your balance : " + customer.BANALACE);
+						}
+						else if (choice == "2")
+						{
+							customer.withdraw();
+							Console.WriteLine("Your balance : " + customer.BANALACE);
+						}
+						else if (choice == "3")
+						{
+							Console.WriteLine("****************************\nname : " + customer.NAME +
+						  "\n****************************\nage : " + customer.AGE + "\n****************************\nemail : " + customer.EMAIL +
+						  "\n****************************\npassword : " + customer.PASSWORD + "\n****************************\nbalance : " + customer.BANALACE);
+						}
+						else if (choice == "4")
+						{
+							break;
+						}
+						else
+						{
+							Console.WriteLine("Invalide input");
+						}
+					}
+
+				}
+				else
+				{
+					Console.WriteLine("invalid choice");
 				}
 			}
 		}

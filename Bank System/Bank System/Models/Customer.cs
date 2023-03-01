@@ -8,7 +8,7 @@ namespace Bank_System.Models
 {
 	public class Customer : User
 	{
-		protected double balance =0;
+		protected static double balance;
 		public static int counter;
 
 		public int ID { get => id; set => id = value; }

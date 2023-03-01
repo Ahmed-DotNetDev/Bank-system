@@ -10,7 +10,7 @@ namespace Bank_System.Models
 		public new double deposit()
 		{
 			Console.WriteLine($"your balance now ('{balance}$') Enter The amount you want to add: ? ");
-			double AddingMoney = Convert.ToInt32(Console.ReadLine());
+			double AddingMoney = Convert.ToDouble(Console.ReadLine());
 			balance += AddingMoney;
 			return balance;
 		}
@@ -18,7 +18,7 @@ namespace Bank_System.Models
 		public new double withdraw()
 		{
 			Console.WriteLine($"your balance now ('{balance}$') Enter The amount you want to pull: ? ");
-			double PullMoney = Convert.ToInt32(Console.ReadLine());
+			double PullMoney = Convert.ToDouble(Console.ReadLine());
 			balance -= PullMoney;
 			return balance;
 		}
